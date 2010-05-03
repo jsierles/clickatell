@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{clickatell}
-  s.version = "0.7.1"
+  s.version = "0.7.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Luke Redpath"]
-  s.date = %q{2009-12-01}
+  s.date = %q{2010-05-03}
   s.default_executable = %q{sms}
   s.email = %q{luke@lukeredpath.co.uk}
   s.executables = ["sms"]
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "README.textile",
      "Rakefile",
      "bin/sms",
+     "clickatell.gemspec",
      "lib/clickatell.rb",
      "lib/clickatell/api.rb",
      "lib/clickatell/api/command.rb",
@@ -58,7 +59,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://clickatell.rubyforge.org}
   s.rdoc_options = ["--main", "RDOC_README.txt"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Ruby interface to the Clickatell SMS gateway service.}
   s.test_files = [
     "spec/api_spec.rb",

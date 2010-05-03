@@ -135,13 +135,13 @@ module Clickatell
       Response.stubs(:parse).with(response).returns('ID' => 'message_id')
       @api.send_message('4477791234567', 'hello world', :from => 'LUKE')
     end
-    
-    it "should set the :mo flag to 1 when :set_mobile_originated is true when sending a message" do
-      @executor.expects(:execute).with('sendmsg', 'http', has_entry(:mo => '1')).returns(response=mock('response'))
+
+    it "should set the :concat parameter when the message is longer than 160 characters" do
+      @executor.expects(:execute).with('sendmsg', 'http', has_entries(:concat => 2)).returns(response = stub('response'))
       Response.stubs(:parse).with(response).returns('ID' => 'message_id')
-      @api.send_message('4477791234567', 'hello world', :set_mobile_originated => true)
+      @api.send_message('4477791234567', 't'*180)
     end
-    
+        
     it "should set the callback flag to the number passed in the options hash" do
       @executor.expects(:execute).with('sendmsg', 'http', has_entry(:callback => 1)).returns(response=mock('response'))
       Response.stubs(:parse).with(response).returns('ID' => 'message_id')
